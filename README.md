@@ -1,6 +1,6 @@
 # eslint-plugin-calm-comments 💌
 
-ESLint plugin to keep comments calm and easy to read.
+ESLint plugin that keeps comments calm and collected (=more readable).
 
 ## Install
 
@@ -28,7 +28,7 @@ Add `calm-comments` to the plugins section and enable the rules you want.
 Disallows comments that are entirely uppercase.
 
 ### `no-punctuation-spam`
-Reports comments with long sequences of punctuation such as `!!!`, `???` or `...`.
+Reports comments with long sequences of punctuation such as `!!`,, `!!!`, `???`, or `...`.
 
 ## License
 

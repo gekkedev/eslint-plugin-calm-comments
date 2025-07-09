@@ -6,10 +6,13 @@ const tester = new RuleTester();
 tester.run('no-punctuation-spam', rule, {
   valid: [
     { code: '// This is fine.' },
-    { code: '// What?!' },
+    { code: '// still fine!' },
+    { code: '// What?' },
   ],
   invalid: [
     { code: '// OMG!!!', errors: [{ messageId: 'spam' }] },
+    { code: '// What??', errors: [{ messageId: 'spam' }] },
+    { code: '// What?!', errors: [{ messageId: 'spam' }] },
     { code: '// What???', errors: [{ messageId: 'spam' }] },
     { code: '// ........', errors: [{ messageId: 'spam' }] },
   ],

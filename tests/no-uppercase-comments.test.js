@@ -10,6 +10,7 @@ tester.run('no-uppercase-comments', rule, {
   ],
   invalid: [
     { code: '// THIS IS YELLING', errors: [{ messageId: 'yelling' }] },
-    { code: '// WHY ARE YOU YELLING?', errors: [{ messageId: 'yelling' }] },
+    { code: '// this is PARTIAL YELLING', errors: [{ messageId: 'yelling' }] },
+    { code: '// WHY IS THE CODE NOT WORKING?', errors: [{ messageId: 'yelling' }] },
   ],
 });

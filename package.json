@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-calm-comments",
   "version": "1.0.0",
-  "description": "ESLint plugin that enforces calm and collected (=more readable) comments.",
+  "description": "ESLint plugin that keeps comments calm and collected (=more readable).",
   "main": "index.js",
   "scripts": {
     "test": "node tests/no-uppercase-comments.test.js && node tests/no-punctuation-spam.test.js"
