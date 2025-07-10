@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-calm-comments",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ESLint plugin that keeps comments calm and collected (=more readable).",
   "main": "index.js",
   "scripts": {

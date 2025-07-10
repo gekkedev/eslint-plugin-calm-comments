@@ -7,10 +7,14 @@ tester.run('no-uppercase-comments', rule, {
   valid: [
     { code: '// This is calm.' },
     { code: '// Not all CAPS here.' },
+    { code: '// KISS' }, // abbreviation
+    { code: '// HTML' }, // abbreviation
+    { code: '// NASA' }, // abbreviation
   ],
   invalid: [
     { code: '// THIS IS YELLING', errors: [{ messageId: 'yelling' }] },
     { code: '// this is PARTIAL YELLING', errors: [{ messageId: 'yelling' }] },
     { code: '// WHY IS THE CODE NOT WORKING?', errors: [{ messageId: 'yelling' }] },
+    { code: '// UNESCO', errors: [{ messageId: 'yelling' }] },
   ],
 });
