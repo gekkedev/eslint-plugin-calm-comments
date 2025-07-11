@@ -22,19 +22,17 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Publish package
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Automated releases for npm packages.
+        uses: mikeal/merge-release@v4.3.0
 
-      - name: Extract version
-        id: package-version
-        # Pull the version field from package.json for tagging
-        run: echo "version=$(node -p \"require('./package.json').version\")" >> "$GITHUB_OUTPUT"
+    #  - name: Extract version
+    #    id: package-version
+    #    # Pull the version field from package.json for tagging
+    #    run: echo "version=$(node -p \"require('./package.json').version\")" >> "$GITHUB_OUTPUT"
 
-      - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ steps.package-version.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #  - name: Create GitHub release
+    #    uses: softprops/action-gh-release@v2
+    #    with:
+    #      tag_name: v${{ steps.package-version.outputs.version }}
+    #    env:
+    #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
