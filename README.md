@@ -1,5 +1,8 @@
 # eslint-plugin-calm-comments 💌
 
+[![npm](https://img.shields.io/npm/v/eslint-plugin-calm-comments.svg)](https://www.npmjs.com/package/eslint-plugin-calm-comments)
+[![Publish to npm & GitHUb Pages](https://github.com/gekkedev/eslint-plugin-calm-comments/actions/workflows/publish.yml/badge.svg)](https://github.com/gekkedev/eslint-plugin-calm-comments/actions/workflows/publish.yml)
+
 ESLint plugin that keeps comments calm and collected (=more readable).
 
 ## Install
