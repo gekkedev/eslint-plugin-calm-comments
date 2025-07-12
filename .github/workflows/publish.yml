@@ -43,16 +43,26 @@ jobs:
     #    env:
     #      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract version
+        id: package-version
+        # Pull the version field from package.json for later use (tagging & duplicate publishing check)
+        run: echo "version=$(node -p 'require(\"./package.json\").version')" >> "$GITHUB_OUTPUT"
 
-      - name: Publish package
+      - name: Check if the version already exists on NPMJS
+        id: check-version
+        shell: bash
+        run: |
+          if npm view eslint-plugin-calm-comments@${{ steps.package-version.outputs.version }} version > /dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish package (via NPM)
+        if: steps.check-version.outputs.published == 'false'
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
-      - name: Extract version
-        id: package-version
-        # Pull the version field from package.json for tagging
-        run: echo "version=$(node -p 'require(\"./package.json\").version')" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
