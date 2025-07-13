@@ -42,7 +42,11 @@ jobs:
       - name: Extract version
         id: package-version
         # Pull the version field from package.json for later use (tagging & duplicate publishing check)
-        run: echo "version=$(node -p 'require(\"./package.json\").version')" >> "$GITHUB_OUTPUT"
+        run: |
+          # store the version from package.json in a shell variable
+          VERSION=$(node -p "require('./package.json').version")
+          # export it for use in the next jobs
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Check if the version already exists on NPMJS
         id: check-version
