@@ -33,8 +33,9 @@ Disallows comments that are entirely or mostly uppercase.
 Yelling in an academic sense is when a text is written in all-uppercase, which
 in most educated contexts is perceived as shouting. The rule tries to walk a
 tight line between tolerating short outbursts or curses while preventing long
-blocks of uppercase that clearly read like yelling. Like any ESLint rule it is
-opinionated and can cause friction for some developers ¯\\_(ツ)_/¯. Curse speeches are still possible despite using this linting rule when maintaining [properly-cased and civil, yet *extremely legendary*™️ manners](https://github.com/gco/xee/blob/4fa3a6d609dd72b8493e52a68f316f7a02903276/XeePhotoshopLoader.m#L108).
+blocks of uppercase that clearly read like yelling. Like any ESLint rule, it is
+arbitrary (as are most ESLint rules) and can cause friction for some developers ¯\\_(ツ)_/¯.
+Curse speeches are still possible despite using this linting rule when maintaining [properly-cased and civil, yet *extremely legendary*™️ manners](https://github.com/gco/xee/blob/4fa3a6d609dd72b8493e52a68f316f7a02903276/XeePhotoshopLoader.m#L108).
 
 #### Abbreviation tradeoff
 Regardless of relevance, short abbreviations of up to four
