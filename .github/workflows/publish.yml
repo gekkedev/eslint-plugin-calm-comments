@@ -1,4 +1,4 @@
-name: Publish to npm & GitHUb Pages
+name: Publish to npm & GitHub Pages
 
 on:
   push:
